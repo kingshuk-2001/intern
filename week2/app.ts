@@ -53,11 +53,11 @@ const user:User={
 
  //function 
 
- function addnum(x:number,y:number):number{
+ function addnum2(x:number,y:number):number{
      return x+y
  }
 
- console.log(addnum(1,2))
+ console.log(addnum2(1,2))
 
  function log(message : string | number){
      console.log(message);
