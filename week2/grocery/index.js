@@ -3,7 +3,8 @@ const grocPriceInput = document.querySelector('.groc-price')
 const addButton = document.querySelector('.groc-button')
 const grocList = document.querySelector('.groc-list')
 const filterOption = document.querySelector('.filter-groc')
-
+const total = document.querySelector('.total-lab');
+var totalCost = 0;
 
 document.addEventListener('DOMContentLoaded', getGrocItems)
 addButton.addEventListener('click', addgroc);
@@ -25,6 +26,9 @@ function addgroc(event) {
     grocDiv.appendChild(newgroc);
     grocDiv.appendChild(grocPrice);
 
+    totalCost +=  Number(grocPriceInput.value);
+    total.innerHTML = totalCost
+
     saveGrocItems([grocInput.value,grocPriceInput.value]);
 
     const completedButton = document.createElement('button');
@@ -41,6 +45,9 @@ function addgroc(event) {
     grocList.appendChild(grocDiv);
     grocInput.value = "";
     grocPriceInput.value = "";
+
+  
+
 }
 
 function deleteCheck(e) {
@@ -118,6 +125,9 @@ function getGrocItems() {
         newgroc.classList.add('groc-item');
         grocDiv.appendChild(newgroc);
         grocDiv.appendChild(grocPrice);
+
+        totalCost += Number(item[1]);
+        total.innerHTML = totalCost
         
         const completedButton = document.createElement('button');
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -142,6 +152,12 @@ function removeGrocItems(item){
         groc = JSON.parse(localStorage.getItem('groc'))
     }
     const index = item.children[0].innerText;  
+
+ 
+    totalCost -= Number(item.children[1].innerText);
+    total.innerHTML = totalCost
+ 
+
     var dex
     for(let g of groc){
         if(g[0] == index){
