@@ -548,6 +548,86 @@ function addres(city, state) {
     console.log(newad);
 }
 
-addres('ranchi', 'jhar')
+addres('ranchi', 'jhar');
 
+
+//immediatly invoked func exp
+(function(a,b){
+   console.log("hiiii");;
+})(10,20);
+
+
+//higher order functions
+const func1 = (name)=>{
+    if(name == "king"){
+        return function(topic){
+            console.log(`hi ${name} study ${topic}`);
+        }
+    }
+    if(name == "drake"){
+        return function(topic){
+            console.log(`hi ${name} study ${topic}`);
+        }
+    }
+}
+
+func1("king")("js")
+
+
+//closures
+
+//outer has finished executing still inner has access to a ans b 
+//A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+const outerFun = (a) =>{
+    let b = 10;
+    const innerFun = () =>{
+        let sum = a+b;
+        console.log(sum);
+    }
+    return innerFun;
+}
+
+let inner = outerFun(40)
+console.dir(inner)
+inner();
+
+
+//call
+
+const cake1 = {
+    color : "yellow",
+    flavour : function(pound,layer){
+        console.log(`${pound} pound ${layer} layer ${this.color} butter scotch cake`);
+    }
+}
+
+const cake2 = {
+    color : "blue",
+    flavour : function(){
+        console.log(`${this.color} berry cake`);
+    }
+}
+
+cake1.flavour.call(cake2,5,3);
+
+//apply
+cake1.flavour.apply(cake2,[5,3]);
+
+
+//bind
+
+const yt = {
+    yname : "d2d",
+    ytopics : "laptops",
+    display : function(){
+        console.log(`fav yt is ${this.yname} for ${this.ytopics}`);
+    }
+}
+
+let ytfun  = yt.display;
+ytfun()
+
+let ytfun2 =  yt.display.bind(yt)
+ytfun2()
 
