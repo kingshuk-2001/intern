@@ -41,6 +41,7 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 
 
     return (
+        <div className="todo-cont">
         <form className="todos-single" onSubmit={(e)=>handleEdit(e,todo.id)}>
             {edit ? (
                 <input
@@ -78,7 +79,8 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
                     <MdDone />
                 </span>
             </div>
-        </form >)
+        </form >
+        </div>)
 }
 
 export default SingleTodo

@@ -17,10 +17,10 @@ const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd}) => {
              onChange = {(e)=>{
                  setTodo(e.target.value)
              }}
-             placeholder="Enter task" />
+             placeholder="Enter task here" />
             <button className="input-submit" type="submit">Go</button>
         </form>
     )
 }
 
-export default InputField
+export default InputField 
