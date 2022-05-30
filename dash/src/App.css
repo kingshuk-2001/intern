@@ -1,0 +1,136 @@
+.auth-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: aquamarine;
+  height: 100vh;
+}
+
+.auth-page .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.auth-page .btns button {
+  margin-left: 40px;
+  height: 30px;
+  width: 80px;
+  font-size: larger;
+  border: 1px double;
+  background-color: #2e3b64;
+  color: white;
+}
+
+.auth-page h2 {
+  padding: 40px;
+}
+
+.prof {
+  width: 100vw;
+  background-color: aquamarine;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prof .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: large;
+  margin: 30px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.prof .link {
+  text-decoration: none;
+  margin-left: 40px;
+  padding: 15px;
+  font-size: larger;
+  border: 1px double;
+  background-color: #7dc25c;
+  color: black;
+}
+
+.prof button {
+  font-size: larger;
+  border: 1px double;
+  background-color: #e2648a;
+  color: black;
+  padding: 15px;
+}
+
+.dashbrd {
+  background-color: aquamarine;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+}
+
+.cont {
+  background-color: aquamarine;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+}
+
+.info {
+  background-color: aquamarine;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+}
+/*# sourceMappingURL=App.css.map */
