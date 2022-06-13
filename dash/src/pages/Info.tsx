@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import '../App.css'
-import { LoginContext } from '../contexts/LoginContext'
 
 
 const Info = () =>{
@@ -15,3 +14,4 @@ const Info = () =>{
 }
 
 export default Info
+

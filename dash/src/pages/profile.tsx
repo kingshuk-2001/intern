@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../App.css'
-import { LoginContext } from "../contexts/LoginContext";
+import loginContext from "../LoginContext";
+
 
 interface Props{
   logout : any
@@ -10,7 +11,9 @@ interface Props{
 
 const Profile:React.FC<Props> = ({ logout, admin }) => {
 
-
+  const {auth}  =useContext(loginContext)
+  console.log(auth);
+  
   return (
     <div className="prof">
 

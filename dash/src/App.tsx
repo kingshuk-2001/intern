@@ -5,8 +5,8 @@ import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
 import Info from "./pages/Info";
 import Contact from "./pages/Contact";
-import './App.css'
-import { LoginContext } from "./contexts/LoginContext";
+import './App.css' 
+import {LoginProvider} from './LoginContext'
 
 const App = () => {
   const [auth, setAuth]= useState<any>(null);
@@ -16,11 +16,11 @@ const App = () => {
 
   //   let user = localStorage.getItem("user");
   //   console.log(user);
-  //   user && JSON.parse(user) ? setAuth(true) : setAuth(false);
+  //   user  ? setAuth(true) : setAuth(false);
 
   //   let admin = localStorage.getItem("admin");
   //   console.log(admin);
-  //   admin && JSON.parse(admin) ? setAdmin(true) : setAdmin(false);
+  //   admin  ? setAdmin(true) : setAdmin(false);
   // }, []);
 
   // useEffect(() => {
@@ -35,40 +35,41 @@ const App = () => {
 
   return (
 
-    <BrowserRouter>
-    <LoginContext.Provider value={{auth,admin,setAdmin,setAuth}}>
-
-      <Routes>
-      
-        {!auth && (
-         
-          <Route
-            path="/auth"
-            element={<Auth authenticate={(admin:any) => 
-              {savedet(admin)}} />}
-          />
+   <LoginProvider>
+      <BrowserRouter>
      
-        )}
-
-        {auth && (
-          <>
+        <Routes>
+        
+          {!auth && (
+           
             <Route
-              path="/profile"
-              element={<Profile admin={admin} logout={() => setAuth(false)} />}
+              path="/auth"
+              element={<Auth authenticate={(admin:any) => 
+                {savedet(admin)}} />}
             />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/about" element={<Info />} />
-          
-          </>
-        )}
-        {auth && admin &&
-            <Route path="/contact" element={<Contact />} />
-        }
-        <Route path="*" element={<Navigate to={auth ? "/profile" : "/auth"} />} />
        
-      </Routes>
-     </LoginContext.Provider>
-    </BrowserRouter>
+          )}
+  
+          {auth && (
+            <>
+              <Route
+                path="/profile"
+                element={<Profile admin={admin} logout={() => setAuth(false)} />}
+              />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<Info />} />
+            
+            </>
+          )}
+          {auth && admin &&
+              <Route path="/contact" element={<Contact />} />
+          }
+          <Route path="*" element={<Navigate to={auth ? "/profile" : "/auth"} />} />
+         
+        </Routes>
+    
+      </BrowserRouter>
+   </LoginProvider>
   );
 };
 
